@@ -1,0 +1,43 @@
+0.  What is pneumonoultramicroscopicsilicovolcanoconiosis?
+a lung disease caused by silica dust
+
+1.  According to its man page, what does getrusage do?
+Returns a bunch of resource usage measures, depending on a given integer (who value) and the struct called
+
+2.  Per that same man page, how many members are in a variable of type struct rusage?
+Ten members are contained in an rusage struct.
+
+3.  Why do you think we pass before and after by reference (instead of by value) to calculate,
+even though we’re not changing their contents?
+I honestly have no idea
+
+4.  Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words,
+convince us that you indeed understand how that function’s for loop works.
+
+Char 'word' is initialized to contain each word, having an upper limit that accomodates any size word. Int 'c' iterates over 
+every character in the file given, stopping at the EOF character. The next line ensures that each character is either a letter 
+or an apostrophe. If the character is indeed a letter or apostrophe, that character gets appended to the 'word' char, and index
+is incremented. If the word is too long for 'word' char, reset the index int to 0 so long as the next character is not EOF and 
+the current character is a letter.  Perform the same index reset for words with numbers.  
+
+If these arguments are passed with a character, that means we've found a whole word; set the current index of the current word 
+to the sentinal character '\0' to denote the end of a string in memory. Incrememt the 'words' counter. Check the word's spelling
+(somehow). Update the benchmark in the 'time_check' variable with calculate, subtracting the before and after values.
+
+If the word is mispelled, print the word with printf, and increment the 'misspellings' counter.  Reset the index counter to 0
+to prepare for the next word.
+
+
+5.  Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string 
+like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+
+Had we checked whole words at a time, we wouldn't be able to take advantage of our nifty constant time algorithm that we saw in
+the lecture for our spell-checking.  We would've most likely had to iterate over each word in the dictionary, checking linearly,
+which would have left our program's speed dragging on at a snail's pace.
+
+6.  Why do you think we declared the parameters for check and load as const (which means "constant")?
+Both parameters are char *s, which means we're keeping their addresses as constant variables.  These addresses aren't changing, 
+only what is stored at those addresses.  This makes for more robust code, as no more space than what these addresses take up is
+needed (e.g. we keep resetting the word we check, so we don't need to allocate any more memory than what is required to check one
+word). Also, if for some reason our code attempted to change these parameters, or if some other program tried (maliciously or otherwise)
+to overwrite those variables, they wouldn't be able to because of them being constants.

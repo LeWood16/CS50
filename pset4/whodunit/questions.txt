@@ -1,0 +1,57 @@
+1.  What is stdint.h?
+
+stdint.h is a head file in the C standard library; It allows programmers to write more portable code by providing
+a set of typedefs that specify exact-width integer types, together with the minimum and maximum allowable values
+for each type, using macros.
+
+2.  What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+
+These are integer types with a specific size; The 'u' at the beginning of these data types means unsigned, meaning 
+it cannot be a negative value.  All of these data types denote integers, but the 8, 32, etc represent whatever integer
+value for that particular machine is precisely 8 bits, or 32 bits, etc. So these types allow for a greater degree 
+of control in what values are being used in your program.
+
+3.  How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+
+A DWORD has 4 bytes, LONG has 4 bytes, and a WORD has 2 bytes.
+
+4.  What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? Leading bytes used to 
+identify file formats (with high probability) are generally called "magic numbers."
+
+'0x'
+
+5.  What’s the difference between bfSize and biSize?
+
+bfSize is the size of the whole bmp file, which includes the headerfiles, while biSize is the size of the
+BITMAPINFOHEADER header file. biSize is constant and it equals 14 bytes
+
+6.  What does it mean if biHeight is negative?
+
+If biHeight is positive, the bitmap is a bottom-up DIB and its origin is the lower-left corner. If biHeight is 
+negative, the bitmap is a top-down DIB and its origin is the upper-left corner.
+
+7.  What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+
+biBitCount
+
+8.  Why might fopen return NULL in lines 24 and 32 of copy.c?
+
+The user might not have entered those arguments in via the console.
+
+
+9.  Why is the third argument to fread always 1 in our code?
+
+We're only reading one file at a time in this case BITMAPFILEHEADER.
+
+10. What value does line 65 of copy.c assign to padding if bi.biWidth is 3?
+
+3; RGB triple is 3 bytes, times the bi.biwidth is 9, modulo 4 is 1, modulo 4 again is 1, 4 minus 1 is 3;
+
+11. What does fseek do?
+
+fseek sets the file position (use when you want to change the offset of the file pointer fp.
+
+12. What is SEEK_CUR?
+
+This is an integer constant which, when used as the whence argument to the fseek or fseeko function, 
+specifies that the offset provided is relative to the current file position.

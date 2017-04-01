@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<h3>Add Cash To Your Account</h3>
+
+    <form action="{{ url_for('options') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                $<input autocomplete="off" autofocus class="form-control add-dollars" name="dollars" placeholder="0" type="int"/>.
+                <input autocomplete="off" autofocus class="form-control add-cents" name="cents" placeholder="00" type="int"/>
+                <button class="btn btn-success bold" type="submit" name="btn" value="cash">Add Cash</button>
+            </div>
+        </fieldset>
+    </form>
+    
+    <div class="container">
+        <h3>Change Your Password</h3>
+        
+        <form action="{{ url_for('options') }}" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <input autocomplete="off" autofocus class="form-control" name="old" placeholder="old password" type="password"/>
+                    <input autocomplete="off" autofocus class="form-control" name="new" placeholder="new password" type="password"/>
+                    <input autocomplete="off" autofocus class="form-control" name="confirm" placeholder="new password again" type="password"/>
+                    <button class="btn btn-success bold" type="submit" name="btn" value="pass">Change Password</button>
+                </div>
+            </fieldset>
+        </form>    
+    </div>
+
+{% endblock %}

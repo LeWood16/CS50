@@ -1,0 +1,4 @@
+0. The framework allows dimensions from size 3 to size 9.
+1. The game's data structure is represented via two-dimensional array.
+2. The greet() function is called to greet the player at the game's start.
+3. Functions 'greet' and 'clear' are both taken care of for us; we need to implement the functions 'init (DONE),' 'draw (DONE),' 'move,' and 'won (DONE).'

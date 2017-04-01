@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+    <h2>Current Cash In Account: {{ cash_usd }}</h2>
+
+    <div class="table-responsive">
+       <table class="table table-bordered">
+        <TR class="forest bold">
+            <TD>Symbol</TD>
+            <TD>Name</TD>
+            <TD>Quantity</TD>
+            <TD>Price</TD>
+            <TD>Total Value</TD>
+        </TR>
+    {% for i in range(0, l) %}
+        <TR>
+            <TD>{{ user_table_dict[i]['symbol'] }}</TD>
+            <TD>{{ user_table_dict[i]['name'] }}</TD>
+            <TD>{{ user_table_dict[i]['quantity'] }}</TD>
+            <TD>{{ current_prices_usd[i] }}</TD>
+            <TD>{{ total_prices_usd[i] }}</TD>
+        </TR>
+    {% endfor %}
+       </table>
+    </div>
+    
+    <h2>Current Account Value (Cash + Stocks): {{ total_account_value }} </h2>
+
+{% endblock %}

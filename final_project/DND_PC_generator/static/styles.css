@@ -1,0 +1,60 @@
+.container
+{
+    /* center contents */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+main td
+{
+    /* left-align tables' cells */
+    text-align: left;
+}
+
+.add-dollars
+{
+    max-width: 120px;
+}
+
+.add-cents
+{
+    max-width: 50px;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.electric {
+    background: #3CC47C;
+}
+
+.forest {
+    background: #1E392A;
+}
+
+.light {
+    background: #E9C893;
+}
+
+.w {
+    color: white;
+}
