@@ -58,3 +58,16 @@ main td
 .w {
     color: white;
 }
+
+.question-ticker{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
