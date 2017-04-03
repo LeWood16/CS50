@@ -28,6 +28,7 @@
 
             <nav class="navbar navbar-default" id="lang-main">
                 <div class="container-fluid light bold">
+                    <h3>Select a language</h3>
                     <div class="navbar-header">
                         <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#languages" data-toggle="collapse" type="button">
                             <span class="sr-only">Toggle navigation</span>
@@ -38,18 +39,17 @@
 
                     </div>
                     <div class="collapse navbar-collapse" id="languages">
-                            <ul class="nav navbar-nav">
-                                <li><a href="#">JavaScript</a></li>
-                                <li><a href="#">Python</a></li>
-                                <li><a href="#">C++</a></li>
-                                <li><a href="#">Ruby</a></li>
-                           </ul>
+                                <button class="btn btn-default choice lang-btn" id="JavaScript">JavaScript</button>
+                                <button class="btn btn-default choice lang-btn" id="Python">Python</button>
+                                <button class="btn btn-default choice lang-btn" id="C++">C++</button>
+                                <button class="btn btn-default choice lang-btn" id="Ruby">Ruby</button>
                     </div>
                 </div>
             </nav>
             
            <nav class="navbar navbar-default" id="diff-main">
                 <div class="container-fluid light bold">
+                    <h3>Select a difficulty</h3>
                     <div class="navbar-header">
                         <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#difficulty" data-toggle="collapse" type="button">
                             <span class="sr-only">Toggle navigation</span>
@@ -60,17 +60,16 @@
 
                     </div>
                     <div class="collapse navbar-collapse" id="difficulty">
-                            <ul class="nav navbar-nav">
-                                <li><a href="#">easy</a></li>
-                                <li><a href="#">medium</a></li>
-                                <li><a href="#">hard</a></li>
-                           </ul>
+                                <button class="btn btn-default choice green-btn d">Easy</button>
+                                <button class="btn btn-default choice yellow-btn d">Medium</button>
+                                <button class="btn btn-default choice red-btn d">Hard</button>
                     </div>
                 </div>
             </nav>
             
             <nav class="navbar navbar-default" id="question-main">
                 <div class="container-fluid light bold">
+                    <h3>Select number of questions</h3>
                     <div class="navbar-header">
                         <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#questions" data-toggle="collapse" type="button">
                             <span class="sr-only">Toggle navigation</span>
@@ -81,12 +80,10 @@
 
                     </div>
                     <div class="collapse navbar-collapse" id="questions">
-                            <ul class="nav navbar-nav">
-                                <li><a href="#">10</a></li>
-                                <li><a href="#">30</a></li>
-                                <li><a href="#">50</a></li>
-                                <li><a href="#">100</a></li>
-                           </ul>
+                                <button class="btn btn-default choice green-btn">10</button>
+                                <button class="btn btn-default choice yellow-btn">30</button>
+                                <button class="btn btn-default choice orange-btn">50</button>
+                                <button class="btn btn-default choice red-btn">100</button>
                     </div>
                 </div>
             </nav>

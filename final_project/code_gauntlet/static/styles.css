@@ -64,10 +64,37 @@ main td
     margin: 0 auto;
 }
 
-.hide{
-    display: none;
+.choice {
+	width: 100px;
+	height: 66px;
+    color: #FFF;
 }
 
-.show{
-    display: block;
+.lang-btn{
+    background: #000;
+}
+
+.green-btn{
+    background: #0c0;
+}
+
+.yellow-btn{
+    background: #cc0;
+}
+
+.red-btn{
+    background: #c00;
+}
+
+.orange-btn{
+  background: #c80;
+}
+
+.folder-tag {
+	width: 100px;
+	height: 66px;
+	-webkit-transform: skew(20deg);
+	   -moz-transform: skew(20deg);
+	     -o-transform: skew(20deg);
+    background: #E9C893;
 }

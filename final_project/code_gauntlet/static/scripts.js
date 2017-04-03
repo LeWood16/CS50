@@ -1,24 +1,50 @@
 $(document).ready(function(){  
-
- $("#diff-main").css("display", "none");
- $("#question-main").css("display", "none");
-
- $("#test").click(function(){
-    console.log("test");
-    $("#tester").html("success");
-  }); 
-  
-  
+    
+   var userGame = {};
 
 
-$("#lang-main").click(function(){
+   $("#diff-main").css("display", "none");
+   $("#question-main").css("display", "none");
+
+
+$(".lang-btn").click(function(){
  $("#diff-main").css("display", "block");
-})
+});
 
-$("#diff-main").click(function(){
+$(".d").click(function(){
  $("#question-main").css("display", "block");
-})
+});
 
+
+$("nav > ul > button").click(function(){
+   var category = this.parent().parent().id;
+   userGame[category] = this.id;
+   console.log("category:" + category);
+   console.log("button id for value:" + this.id)
+});
+
+function userChoices(language, difficulty, questions){
+    return {
+        "language": language,
+        "difficulty": difficulty,
+        "questions": questions
+    }
+}
+
+
+/*
+
+-user clicks a language button
+   -function takes the div of the button user clicked
+   -
+
+
+
+
+
+
+
+*/
 
 
 

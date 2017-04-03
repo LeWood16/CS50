@@ -14,11 +14,7 @@
 # goals for beta
 
     # have layout template designed, both in jinja and html/css
-    
-        # either a nested unordered list system, or a form designed to look like
-        # nested folders
-        # prompts (maybe in beta, maybe not) to prompt the user to select a language(s) first
-    
+
     # difficulty settings
         
         # easy 
@@ -49,9 +45,12 @@
         
         # show total time allotted on index page before user clicks "start"
         
-    
+        
     
 # THIS POMODORO:
 
 # make nested list for default tags (languages, difficulty, number of questions) or make
 # them unnested, and show up when user clicks an option from list above
+
+# once everything is selected, all the selection divs fade away, and a countdown from 3 
+# starts; then the first question fades in;
