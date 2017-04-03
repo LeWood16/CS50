@@ -49,8 +49,7 @@
     
 # THIS POMODORO:
 
-# make nested list for default tags (languages, difficulty, number of questions) or make
-# them unnested, and show up when user clicks an option from list above
+# create an object to push to server, to grab the neccessary questions
 
 # once everything is selected, all the selection divs fade away, and a countdown from 3 
 # starts; then the first question fades in;

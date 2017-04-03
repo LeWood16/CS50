@@ -60,9 +60,9 @@
 
                     </div>
                     <div class="collapse navbar-collapse" id="difficulty">
-                                <button class="btn btn-default choice green-btn d">Easy</button>
-                                <button class="btn btn-default choice yellow-btn d">Medium</button>
-                                <button class="btn btn-default choice red-btn d">Hard</button>
+                                <button class="btn btn-default choice green-btn d" id="easy">Easy</button>
+                                <button class="btn btn-default choice yellow-btn d" id="medium">Medium</button>
+                                <button class="btn btn-default choice red-btn d" id="hard">Hard</button>
                     </div>
                 </div>
             </nav>
@@ -77,14 +77,19 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-
                     </div>
-                    <div class="collapse navbar-collapse" id="questions">
-                                <button class="btn btn-default choice green-btn">10</button>
-                                <button class="btn btn-default choice yellow-btn">30</button>
-                                <button class="btn btn-default choice orange-btn">50</button>
-                                <button class="btn btn-default choice red-btn">100</button>
-                    </div>
+                    
+                    <form action="{{ url_for('index') }}" method="post">
+                       <fieldset>
+                            <div class="collapse navbar-collapse" id="questions">
+                                <button class="btn btn-default choice green-btn" id="10">10</button>
+                                <button class="btn btn-default choice yellow-btn" id="30">30</button>
+                                <button class="btn btn-default choice orange-btn" id="50">50</button>
+                                <button class="btn btn-default choice red-btn" id="100">100</button>
+                            </div>
+                       </fieldset>
+                    </form>
+                    
                 </div>
             </nav>
 

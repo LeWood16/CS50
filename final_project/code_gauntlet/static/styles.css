@@ -90,11 +90,10 @@ main td
   background: #c80;
 }
 
-.folder-tag {
-	width: 100px;
-	height: 66px;
-	-webkit-transform: skew(20deg);
-	   -moz-transform: skew(20deg);
-	     -o-transform: skew(20deg);
-    background: #E9C893;
+.game-container{
+    width: 80%;
+    margin: 0 auto;
+    background: #FFF;
+    color: #000;
+    min-height: 300px;
 }
