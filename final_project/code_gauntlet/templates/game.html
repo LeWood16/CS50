@@ -1,22 +1,93 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
 
-{% block title %}
-    Index
-{% endblock %}
+<html lang="en">
 
-{% block main %}
+    <head>
 
-        <div class="game-container">
-            <h1>
-                GAME PAGE SUCCESS KEK
-            </h1>
-            <ul>
-                <li>list item one</li>
-                <li>list item two</li>
-                <li>list item three</li>
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
 
-            </ul>
-            <div>{{ content }} </div>
+        <!-- documentation at http://getbootstrap.com/, alternative themes at https://www.bootstrapcdn.com/bootswatch/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+        <link href="../static/styles.css" rel="stylesheet"/>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="../static/scripts.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <title>codeGauntlet JavaScript: Easy Questions</title>
+
+    </head>
+
+    <body>
+
+        <div class="container electric">
+
+            <nav class="navbar navbar-default" id="back-to-main">
+                <div class="container-fluid light bold">
+                    <div class="navbar-header">
+                        <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#languages" data-toggle="collapse" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                    <div class="collapse navbar-collapse" id="languages">
+                                <a href="index.html" class="btn btn-default" id="home">Back to Home</a>
+
+                    </div>
+                </div>
+            </nav>
+            <!-- questions gathered from toptal -->
+            <div id="challenge" class="container-fluid">
+                <div id="question">
+                    <p>What is a potential pitfall with using 
+                    <code>typeof bar === "object"</code> to determine if 
+                    <code>bar</code> is an object? How can this pitfall be avoided?</p>
+                </div>
+                <div id="answer">
+<p>Although <code>typeof bar === "object"</code> <em>is</em> a reliable way of checking if <code>bar</code> is an object, the surprising gotcha in JavaScript is that <code>null</code> is <em>also</em> considered an object!</p>
+
+<p>Therefore, the following code will, to the surprise of most developers, log <code>true</code> (not <code>false</code>) to the console:</p>
+
+<pre><code>var bar = null;
+console.log(typeof bar === "object");  // logs true!
+</code></pre>
+
+<p>As long as one is aware of this, the problem can easily be avoided by also checking if <code>bar</code> is <code>null</code>:</p>
+
+<pre><code>console.log((bar !== null) &amp;&amp; (typeof bar === "object"));  // logs false
+</code></pre>
+
+<p>To be entirely thorough in our answer, there are two other things worth noting:</p>
+
+<p>First, the above solution will return <code>false</code> if <code>bar</code> is a function.  In most cases, this is the desired behavior, but in situations where you want to also return <code>true</code> for functions, you could amend the above solution to be:</p>
+
+<pre><code>console.log((bar !== null) &amp;&amp; ((typeof bar === "object") || (typeof bar === "function")));
+</code></pre>
+
+<p>Second, the above solution will return <code>true</code> if <code>bar</code> is an array (e.g., if <code>var bar = [];</code>).  In most cases, this is the desired behavior, since arrays are indeed objects, but in situations where you want to also <code>false</code> for arrays, you could amend the above solution to be:</p>
+
+<pre><code>console.log((bar !== null) &amp;&amp; (typeof bar === "object") &amp;&amp; (toString.call(bar) !== "[object Array]"));
+</code></pre>
+
+<p>Or, if you’re using jQuery:</p>
+
+<pre><code>console.log((bar !== null) &amp;&amp; (typeof bar === "object") &amp;&amp; (! $.isArray(bar)));
+</code></pre>
+<p>question source <a href="https://www.toptal.com/javascript/interview-questions" target="_blank">here</a></p>
+
+                </div>
+            </div>
+
+            
         </div>
         
-{% endblock %}
+    </body>
+
+</html>

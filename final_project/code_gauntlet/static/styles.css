@@ -97,3 +97,24 @@ main td
     color: #000;
     min-height: 300px;
 }
+
+.hidden{
+    display: none;
+}
+
+#back-to-main{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#challenge{
+    color: #FFF;
+    background: #00F;
+    font-size: 20px;
+}
+
+code{
+    color: #FFF;
+    background: #88F;
+    font-size: 20px;
+}

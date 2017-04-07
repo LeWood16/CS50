@@ -2,9 +2,6 @@ from flask import Flask, flash, redirect, render_template, request, session, url
 from flask_session import Session
 from passlib.apps import custom_app_context as pwd_context
 from tempfile import gettempdir
-import markdown
-from flask import Markup
-
 
 
 app = Flask(__name__)
@@ -33,8 +30,6 @@ def game():
     if request.method == "GET":
         return render_template("game.html")
     else:
-        # look into adding markdown, so you can render questions as they 
-        # would appear on a stackoverflow post, or a blog about programming
         return render_template("game.html")
 
 
